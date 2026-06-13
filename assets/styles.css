@@ -107,7 +107,7 @@ a {
 }
 
 .hero-eyebrow {
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     letter-spacing: 0.32em;
     text-transform: uppercase;
     color: var(--accent-lit);
@@ -245,7 +245,7 @@ a {
 /* === ABOUT === */
 .about-body {
     max-width: 680px;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     color: var(--muted);
     line-height: 1.85;
 }
@@ -289,16 +289,9 @@ a {
     background: var(--surface-2);
 }
 
-.feature-glyph {
-    width: 28px;
-    height: 28px;
-    margin-bottom: 1.25rem;
-    opacity: 0.45;
-}
-
 .feature-name {
     font-family: 'Philosopher', serif;
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.13em;
     text-transform: uppercase;
