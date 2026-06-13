@@ -4,11 +4,11 @@
     --surface: #0E0E16;
     --surface-2: #13131C;
     --border: #1C1C28;
-    --text: #DDD8D0;
+    --text: #d2d0dd;
     --muted: #54505E;
-    --accent: #B83A0A;
-    --accent-lit: #E04E18;
-    --accent-dim: rgba(184, 58, 10, 0.12);
+    --accent: #7337ff;
+    --accent-lit: #968fff;
+    --accent-dim: rgba(77, 10, 184, 0.12);
 }
 
 /* === RESET === */
