@@ -949,6 +949,10 @@
                 vid.autoplay = true;
                 media.appendChild(vid);
             }
+            const dateTag = document.createElement('span');
+            dateTag.className = 'devlog-lb-date';
+            dateTag.textContent = devlogDateLabel(item.f);
+            media.appendChild(dateTag);
         }
 
         function devlogCloseLb() {

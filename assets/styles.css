@@ -954,9 +954,9 @@ a {
     position: absolute;
     bottom: 6px;
     left: 8px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     letter-spacing: 0.06em;
-    color: rgba(210,208,221,0.4);
+    color: var(--text);
 }
 
 .devlog-more {
@@ -997,11 +997,28 @@ a {
     pointer-events: all;
 }
 
+.devlog-lb-media {
+    position: relative;
+}
+
 .devlog-lb-media img,
 .devlog-lb-media video {
     max-width: 90vw;
     max-height: 85vh;
     display: block;
+}
+
+.devlog-lb-date {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: rgba(8, 8, 12, 0.9);
+    padding: 3px 8px;
+    pointer-events: none;
 }
 
 .devlog-lb-close,
