@@ -46,7 +46,7 @@ a {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0.75;
+    opacity: 1;
 }
 
 /* === NAV === */
@@ -275,6 +275,107 @@ a {
 
 .about-refs span {
     color: var(--text);
+}
+
+/* === GAMEPLAY === */
+.loop-row {
+    display: grid;
+    grid-template-columns: 1fr 32px 1fr 32px 1fr;
+    align-items: stretch;
+    margin-bottom: 1.5rem;
+}
+
+.loop-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.loop-card.active {
+    border-color: var(--muted);
+    background: var(--surface-2);
+}
+
+.loop-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+}
+
+.loop-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--muted);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.loop-card.active .loop-icon {
+    color: var(--accent-lit);
+    border-color: var(--accent-lit);
+}
+
+.loop-card-title {
+    font-family: 'Philosopher', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.loop-card-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.72;
+}
+
+.loop-card.active .loop-card-desc {
+    color: var(--text);
+    opacity: 0.75;
+}
+
+.loop-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--border);
+    transition: color 0.3s;
+}
+
+.loop-arrow.active {
+    color: var(--accent-lit);
+}
+
+.loop-badge-wrap {
+    display: flex;
+}
+
+.loop-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.875rem;
+}
+
+@media (max-width: 860px) {
+    .loop-row {
+        grid-template-columns: 1fr;
+    }
+    .loop-arrow {
+        transform: rotate(90deg);
+        height: 32px;
+    }
 }
 
 /* === FEATURES === */
