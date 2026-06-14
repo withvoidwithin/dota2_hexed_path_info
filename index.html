@@ -24,11 +24,11 @@
     <nav class="nav" aria-label="Основная навигация">
         <span class="nav-logo">Hexed Path</span>
         <ul class="nav-links">
-            <li><a href="#about">Об игре</a></li>
-            <li><a href="#features">Механики</a></li>
-            <li><a href="#world">Мир</a></li>
-            <li><a href="#roadmap">Роадмап</a></li>
-            <li><a href="#media">Медиа</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#world">Setting</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#media">Media</a></li>
         </ul>
     </nav>
 
@@ -44,8 +44,8 @@
     <!-- ═══ ABOUT ═══ -->
     <section class="section" id="about">
         <div class="section-inner">
-            <div class="section-label reveal">Об игре</div>
-            <h2 class="section-title reveal">Один рейд — один шанс</h2>
+            <div class="section-label reveal">About</div>
+            <h2 class="section-title reveal">One Raid, One Chance</h2>
 
             <p class="about-body reveal">
                 Мир охвачен тьмой. Выжившие держатся за последние безопасные земли.
@@ -78,8 +78,8 @@
 
      <section class="section section-alt" id="gameplay">
         <div class="section-inner">
-            <div class="section-label reveal">Геймплей</div>
-            <h2 class="section-title reveal">Основной игровой процесс</h2>
+            <div class="section-label reveal">Gameplay</div>
+            <h2 class="section-title reveal">Core Game Loop</h2>
 
             <div class="loop-row reveal">
 
@@ -137,8 +137,8 @@
     <!-- ═══ FEATURES ═══ -->
     <section class="section section-alt" id="features">
         <div class="section-inner">
-            <div class="section-label reveal">Механики</div>
-            <h2 class="section-title reveal">Особенности игры</h2>
+            <div class="section-label reveal">Pillars</div>
+            <h2 class="section-title reveal">Key Features</h2>
 
             <div class="features-grid reveal">
 
@@ -186,8 +186,8 @@
     <!-- ═══ WORLD ═══ -->
     <section class="section" id="world">
         <div class="section-inner">
-            <div class="section-label reveal">Сеттинг</div>
-            <h2 class="section-title reveal">Мир начался с выживания и затем к нему снова вернулся.</h2>
+            <div class="section-label reveal">Setting</div>
+            <h2 class="section-title reveal">The world began with survival, and eventually returned to it.</h2>
             <div class="world-inner">
                 <blockquote class="world-quote reveal">
                     Жадность, слепота власти и игра в богов привели цивилизацию к краю пропасти.
@@ -213,98 +213,467 @@
     <!-- ═══ ROADMAP ═══ -->
     <section class="section section-alt" id="roadmap">
         <div class="section-inner">
-            <div class="section-label reveal">Разработка</div>
-
+            <div class="section-label reveal">Development</div>
             <h2 class="section-title reveal">Roadmap</h2>
 
-            <div class="roadmap-list reveal">
+            <div class="roadmap-container reveal">
 
                 <!-- Phase 0 -->
-                <div class="roadmap-phase">
-                    <div class="phase-dot is-done"></div>
-                    <div class="phase-header">
-                        <span class="phase-name">Phase 0 — Research & Prototype</span>
-                        <span class="phase-badge is-done">Завершено</span>
+                <div class="roadmap-row">
+                    <div class="roadmap-time">2021 - 2026</div>
+                    <div class="roadmap-bracket">
+                        <div class="roadmap-bracket-line"></div>
                     </div>
-                    <ul class="phase-items">
-                        <li>Лор игры</li>
-                        <li>Исследование возможностей движка и API</li>
-                        <li>Прототипы базовых механик</li>
-                        <li>Прототипы дизайна локаций и инвентаря</li>
-                        <li>Реализация и публикация игровой демки</li>
-                    </ul>
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase-header">
+                            <span class="phase-name">Phase 0 — Learn, Research & Prototype</span>
+                        </div>
+                        <div class="phase-cards-grid">
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                                    <span>Concept</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Концепция мира</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Предыстория</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Сюжет</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Персонажи</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                    <span>Research</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Изучение Source 2, API, Valve Panorama UI и прочих инструментов SDK</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Оценка возможностей</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Разработка архитектуры и пайплайна</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                    <span>Prototypes & Demo</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Level & UI Design Showcases</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Прототипы игровых механик</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" checked disabled>
+                                            <span>Реализация прототипов в Steam Workshop</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Phase 1 -->
-                <div class="roadmap-phase">
-                    <div class="phase-dot is-active"></div>
-                    <div class="phase-header">
-                        <span class="phase-name">Phase 1 — Hub & Core Loop</span>
-                        <span class="phase-badge is-active">В разработке</span>
-                        <span class="phase-duration">~2 месяца</span>
+                <!-- Phase 1 (Active) -->
+                <div class="roadmap-row is-active">
+                    <div class="roadmap-time">Q3 2026</div>
+                    <div class="roadmap-bracket">
+                        <div class="roadmap-bracket-line"></div>
                     </div>
-                    <ul class="phase-items">
-                        <li>Базовая локация-хаб (Sanctum)</li>
-                        <li>Алтарь героев: создание / выбор / смена героя</li>
-                        <li>Стол Разлома: выбор локации</li>
-                        <li>Врата Разлома: перемещение в выбранную локацию</li>
-                    </ul>
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase-header">
+                            <div class="phase-pulse-dot"></div>
+                            <span class="phase-name">Phase 1 — Core Game Loop & HUB</span>
+                        </div>
+                        <div class="phase-cards-grid">
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    <span>World & Environment</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Создание игровых ассетов: материалы, модели окружения, эффекты</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Локация Sanctum (HUB игроков)</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Локация Grey Encampment</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10z"/></svg>
+                                    <span>Custom Hero System</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Создание нового героя</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Выбор существующего героя</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Смена героя в процессе игры</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                                    <span>Maps Spawn System</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Меню выбора локации</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Подгрузка / выгрузка локации</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Перемещение игроков в новую локацию и обратно</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Phase 2 -->
-                <div class="roadmap-phase">
-                    <div class="phase-dot"></div>
-                    <div class="phase-header">
-                        <span class="phase-name">Phase 2 — Combat & Systems</span>
-                        <span class="phase-badge">Запланировано</span>
-                        <span class="phase-duration">~3 месяца</span>
+                <div class="roadmap-row">
+                    <div class="roadmap-time">Q4 2026</div>
+                    <div class="roadmap-bracket">
+                        <div class="roadmap-bracket-line"></div>
                     </div>
-                    <ul class="phase-items">
-                        <li>Боевая система: кастомные статы, базовые способности</li>
-                        <li>Система кемпов: спавн, группы, поведение</li>
-                        <li>Механика инвентаря</li>
-                        <li>Предметы: ресурсы, расходники, экипировка</li>
-                        <li>Генерация контента: контейнеры с лутом, кемпы врагов</li>
-                        <li>Механика смерти</li>
-                        <li>Сервер проекта: база данных, обработка, хранилище предметов</li>
-                    </ul>
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase-header">
+                            <span class="phase-name">Phase 2 — Core Gameplay & Mechanics</span>
+                        </div>
+                        <div class="phase-cards-grid">
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="14.5" y1="17.5" x2="3" y2="6"/><line x1="13" y1="3.5" x2="20.5" y2="11"/><line x1="18.5" y1="5.5" x2="6" y2="18"/><line x1="20" y1="20" x2="15" y2="15"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                                    <span>Custom Unit Class</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Кастомные характеристики</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Базовые способности</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Кастомная боевая система</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Механика смерти</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M12 2a8 8 0 0 0-8 8v1a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-1a8 8 0 0 0-8-8z"/><path d="M10 18h4a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/></svg>
+                                    <span>Enemies & AI</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Создание новых противников</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Поведение и логика</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Механика динамичных кемпов</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+                                    <span>Loot System</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Ресурсы, расходники, экипировка</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Контейнеры с добычей</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Генерация лута на карте</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                                    <span>External Server</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>База данных игроков</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Игровая статистика</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Хранилище предметов</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Phase 3 -->
-                <div class="roadmap-phase">
-                    <div class="phase-dot"></div>
-                    <div class="phase-header">
-                        <span class="phase-name">Phase 3 — Depth & Content</span>
-                        <span class="phase-badge">Запланировано</span>
-                        <span class="phase-duration">~4 месяца</span>
+                <div class="roadmap-row">
+                    <div class="roadmap-time">Q1 2027</div>
+                    <div class="roadmap-bracket">
+                        <div class="roadmap-bracket-line"></div>
                     </div>
-                    <ul class="phase-items">
-                        <li>Билдостроение: генерация свойств предметов, надевание экипировки</li>
-                        <li>Сюжетные квесты и мировые события</li>
-                        <li>Новые персонажи: фрагменты, врождённые пассивные способности</li>
-                        <li>Союзные NPC: торговец, кузнец</li>
-                        <li>Система крафта: крафт, разбор</li>
-                        <li>Статус эффекты</li>
-                    </ul>
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase-header">
+                            <span class="phase-name">Phase 3 — Depth & Content</span>
+                        </div>
+                        <div class="phase-cards-grid">
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                                    <span>Gearing & Stats</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Генерация свойств предмета</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Экипировка персонажа</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Статус эффекты</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                                    <span>Advanced Content</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Квесты</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Глобальные события в локациях</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Новые персонажи коллекции</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                    <span>Interactions</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>NPC Торговец и Кузнец</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Система крафта и разбора</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Phase 4 -->
-                <div class="roadmap-phase">
-                    <div class="phase-dot"></div>
-                    <div class="phase-header">
-                        <span class="phase-name">Phase 4 — Release</span>
-                        <span class="phase-badge">Релиз</span>
+                <div class="roadmap-row">
+                    <div class="roadmap-time">Q2 2027</div>
+                    <div class="roadmap-bracket">
+                        <div class="roadmap-bracket-line"></div>
                     </div>
-                    <ul class="phase-items">
-                        <li>Полноценный релиз</li>
-                    </ul>
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase-header">
+                            <span class="phase-name">Phase 4 — Launch & Live Ops</span>
+                        </div>
+                        <div class="phase-cards-grid">
+                            <div class="theme-card">
+                                <h4 class="theme-card-title">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2a6 6 0 0 0-6 6v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V8a6 6 0 0 0-6-6z"/></svg>
+                                    <span>Release</span>
+                                </h4>
+                                <ul class="theme-card-tasks">
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Техническая поддержка</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Добавление новых персонажей коллекции</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span>Ротация глобальных событий</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="task-label">
+                                            <input type="checkbox" class="task-checkbox" disabled>
+                                            <span><i>Battle Pass в магазине Dota 2 ?</i></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
             <div class="dev-status reveal">
                 <span class="dev-status-label">Статус разработки — </span>
-                <!-- <span class="dev-status-badge is-active-dev">Активная разработка</span> -->
                 <span class="dev-status-badge is-funding">Поиск финансирования</span>
             </div>
         </div>
@@ -315,8 +684,8 @@
     <!-- ═══ MEDIA ═══ -->
     <section class="section" id="media">
         <div class="section-inner">
-            <div class="section-label reveal">Медиа</div>
-            <h2 class="section-title reveal">Шоукейсы</h2>
+            <div class="section-label reveal">Media</div>
+            <h2 class="section-title reveal">Showcases</h2>
 
             <div class="media-grid reveal">
 
@@ -376,8 +745,8 @@
                 <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3440365729" target="_blank"
                         rel="noopener">Steam Workshop</a></li>
                 <li><a href="https://www.youtube.com/@withvoidwithin" target="_blank" rel="noopener">YouTube</a></li>
-                <li><a href="https://withvoidwithin.github.io/" target="_blank" rel="noopener">Разработчик</a></li>
-                <li><a href="https://withvoidwithin.github.io/#support" target="_blank" rel="noopener">Поддержка</a>
+                <li><a href="https://withvoidwithin.github.io/" target="_blank" rel="noopener">Developer</a></li>
+                <li><a href="https://withvoidwithin.github.io/#support" target="_blank" rel="noopener">Support</a>
                 </li>
             </ul>
             <span class="footer-copy">© 2026 WITHVOIDWITHIN</span>

@@ -457,137 +457,249 @@ a {
 }
 
 /* === ROADMAP === */
-.roadmap-list {
-    position: relative;
-    padding-left: 2.25rem;
-}
-
-.roadmap-list::before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 10px;
-    bottom: 12px;
-    width: 1px;
-    background: var(--border);
-}
-
-.roadmap-phase {
-    position: relative;
-    padding-bottom: 3rem;
-}
-
-.roadmap-phase:last-child {
-    padding-bottom: 0;
-}
-
-.phase-dot {
-    position: absolute;
-    left: -2.25rem;
-    top: 7px;
-    width: 15px;
-    height: 15px;
-    border: 1px solid var(--border);
-    background: var(--bg);
+.roadmap-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.roadmap-row {
+    display: grid;
+    grid-template-columns: 140px 40px 1fr;
+    align-items: stretch;
+    
+    /* Стили плашки */
+    background: rgba(14, 14, 22, 0.45); /* Полупрозрачный фон */
+    border-top: 1px solid rgba(28, 28, 40, 0.7);
+    border-bottom: 1px solid rgba(28, 28, 40, 0.7);
+    padding: 2.5rem 2rem; /* Внутренние отступы для воздуха */
+    
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Элегантное выделение плашки для текущей активной фазы */
+.roadmap-row.is-active {
+    background: rgba(115, 55, 255, 0.03); /* Мягкий фиолетовый отлив */
+    border-top: 1px solid rgba(150, 143, 255, 0.25);
+    border-bottom: 1px solid rgba(150, 143, 255, 0.25);
+}
+
+/* Настройки колонки времени */
+.roadmap-time {
+    font-family: 'Philosopher', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    
+    align-self: center; /* Центрирование даты по вертикали */
+}
+
+.roadmap-row.is-active .roadmap-time {
+    color: var(--accent-lit);
+    text-shadow: 0 0 15px rgba(150, 143, 255, 0.25);
+}
+
+/* Построение скобки */
+.roadmap-bracket {
+    position: relative;
+    display: flex;
     justify-content: center;
 }
 
-.section-alt .phase-dot {
-    background: var(--surface);
+.roadmap-bracket-line {
+    position: absolute;
+    top: 10px;
+    bottom: 12px;
+    left: 12px;
+    width: 1px;
+    background: var(--text); /* Цвет изменен на --text */
+    transition: background 0.3s ease;
 }
 
-.phase-dot::after {
+.roadmap-bracket-line::before,
+.roadmap-bracket-line::after {
     content: '';
-    width: 5px;
-    height: 5px;
-    background: var(--border);
+    position: absolute;
+    left: 0;
+    width: 8px;
+    height: 1px;
+    background: var(--text); /* Цвет изменен на --text */
+    transition: background 0.3s ease;
 }
 
-.phase-dot.is-done {
-    border-color: var(--accent);
+.roadmap-bracket-line::before {
+    top: 0;
 }
 
-.phase-dot.is-done::after {
+.roadmap-bracket-line::after {
+    bottom: 0;
+}
+
+/* Активное состояние скобки */
+.roadmap-row.is-active .roadmap-bracket-line {
+    background: var(--accent-lit);
+    box-shadow: -1px 0 8px rgba(150, 143, 255, 0.4);
+}
+
+.roadmap-row.is-active .roadmap-bracket-line::before,
+.roadmap-row.is-active .roadmap-bracket-line::after {
     background: var(--accent-lit);
 }
 
-.phase-dot.is-active {
-    border-color: var(--accent-lit);
-}
-
-.phase-dot.is-active::after {
-    background: var(--accent-lit);
-    animation: dotPulse 2s ease-in-out infinite;
-}
-
-.phase-header {
+/* Контентная часть */
+.roadmap-content {
     display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 0.875rem;
+    flex-direction: column;
+}
+
+.roadmap-phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.25rem;
 }
 
 .phase-name {
     font-family: 'Philosopher', serif;
-    font-size: 0.88rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text);
 }
 
-.phase-badge {
-    font-size: 0.63rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding: 0.18rem 0.6rem;
+/* Сетка карточек внутри фазы */
+.phase-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Карточки тем */
+.theme-card {
+    background: var(--surface);
     border: 1px solid var(--border);
-    color: var(--muted);
+    padding: 1.25rem;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
-.phase-badge.is-done {
-    border-color: rgba(115, 55, 255, 0.45);
-    color: var(--accent-lit);
+.theme-card:hover {
+    border-color: rgba(115, 55, 255, 0.25);
+    background: var(--surface-2);
 }
 
-.phase-badge.is-active {
-    border-color: rgba(150, 143, 255, 0.5);
-    color: var(--accent-lit);
-}
-
-.phase-duration {
-    font-size: 0.68rem;
+.theme-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Слегка увеличен отступ между иконкой и текстом */
+    font-family: 'Philosopher', serif;
+    font-size: 0.95rem; /* Увеличено с 0.82rem */
+    font-weight: 600;
     letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-left: auto;
+    text-transform: uppercase;
+    color: var(--accent-lit);
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
 }
 
-.phase-items {
+.theme-card-title svg {
+    flex-shrink: 0;
+    width: 17px;  /* Размер иконки увеличен через CSS */
+    height: 17px; /* Размер иконки увеличен через CSS */
+    color: var(--accent-lit);
+    filter: drop-shadow(0 0 4px rgba(150, 143, 255, 0.25));
+}
+
+/* Списки задач внутри тем */
+.theme-card-tasks {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.65rem;
 }
 
-.phase-items li {
-    font-size: 0.875rem;
-    color: var(--muted);
-    padding-left: 1.1rem;
+.task-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    cursor: default;
+}
+
+/* Кастомизированный чекбокс */
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--bg);
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: border-color 0.2s, background-color 0.2s;
 }
 
-.phase-items li::before {
-    content: '–';
+.task-checkbox:disabled {
+    opacity: 1; /* Перезапись дефолтных стилей браузера для disabled */
+}
+
+/* Стили чекбокса при checked */
+.task-checkbox:checked {
+    border-color: var(--accent-lit);
+    background: var(--accent-dim);
+}
+
+.task-checkbox:checked::after {
+    content: '';
+    width: 6px;
+    height: 3px;
+    border-left: 1.5px solid var(--accent-lit);
+    border-bottom: 1.5px solid var(--accent-lit);
+    transform: rotate(-45deg) translate(0.5px, -0.5px);
+}
+
+/* Стили текста при выполнении */
+.task-checkbox:checked + span {
+    color: var(--text);
+    opacity: 1;
+}
+
+.task-checkbox:not(:checked) + span {
+    color: var(--muted);
+}
+
+/* Пульсирующая точка активного состояния */
+.phase-pulse-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent-lit);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 8px var(--accent-lit);
+    margin-top: -4px;
+}
+
+.phase-pulse-dot::after {
+    content: '';
     position: absolute;
-    left: 0;
-    color: var(--border);
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-lit);
+    animation: dotPulse 2s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .dev-status {
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
 }
 
 .dev-status-badge {
@@ -597,12 +709,6 @@ a {
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.04em;
-}
-
-.dev-status-badge.is-active-dev {
-    background: rgba(80, 200, 120, 0.12);
-    border: 1px solid rgba(80, 200, 120, 0.4);
-    color: #6dcc8f;
 }
 
 .dev-status-badge.is-funding {
@@ -616,6 +722,44 @@ a {
     margin-right: 0.6rem;
     font-size: 1rem;
     color: var(--muted);
+}
+
+/* === RESPONSIVE ROADMAP === */
+@media (max-width: 860px) {
+    .roadmap-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 2rem 1.25rem; /* Уменьшенные отступы для мобильных */
+        border-bottom: 1px solid rgba(28, 28, 40, 0.7); /* Сохраняем нижнюю границу плашки */
+    }
+    
+    .roadmap-row:last-child {
+        /* Нижняя граница для последней плашки сохраняется для симметрии */
+        border-bottom: 1px solid rgba(28, 28, 40, 0.7); 
+    }
+
+    .roadmap-container {
+        gap: 2rem;
+    }
+
+    .roadmap-time {
+        font-size: 1.05rem;
+        padding-top: 0;
+        margin-bottom: 0.25rem;
+    }
+
+    .roadmap-bracket {
+        display: none;
+    }
+
+    .roadmap-phase-header {
+        margin-bottom: 1rem;
+    }
+
+    .phase-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
 }
 
 /* === MEDIA === */
