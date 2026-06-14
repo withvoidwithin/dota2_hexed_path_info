@@ -718,9 +718,12 @@ a {
 
 .dev-status-badge.is-funding {
     background: rgba(125, 60, 230, 0.12);
-    border: 1px solid var(--accent);
-    color: var(--accent-lit);
+    /* border-top: 1px solid var(--accent-lit); */
+    /* border-bottom: 1px solid var(--accent-lit); */
+    color: var(--text);
     animation: blink 1.5s ease-in-out infinite;
+    border-radius: 10px;
+    text-transform: uppercase;
 }
 
 .dev-status-label {
@@ -1042,6 +1045,30 @@ a {
 
 @media (max-width: 860px) {
     .devlog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Кнопка поддержки проекта */
+.btn-support {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: rgba(115, 55, 255, 0.06);
+    color: var(--accent-lit);
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid rgba(150, 143, 255, 0.25);
+    transition: background 0.25s, border-color 0.25s, box-shadow 0.25s, color 0.25s;
+    cursor: pointer;
+}
+
+.btn-support:hover {
+    background: rgba(115, 55, 255, 0.15);
+    border-color: var(--accent-lit);
+    box-shadow: 0 0 20px rgba(115, 55, 255, 0.2);
+    color: var(--text);
 }
 
 /* === FOOTER === */
