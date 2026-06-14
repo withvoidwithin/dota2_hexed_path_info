@@ -820,45 +820,43 @@
         setInterval(loopTick, LOOP_STEP);
 
         const DEVLOG = [
-            { f: '2023_06_20.png', t: 'img' },
-            { f: '2023_06_25.mp4', t: 'video' },
-            { f: '2023_07_17.png', t: 'img' },
-            { f: '2023_08_15.mp4', t: 'video' },
-            { f: '2023_08_16.mp4', t: 'video' },
-            { f: '2023_08_16.png', t: 'img' },
-            { f: '2023_08_19.png', t: 'img' },
-            { f: '2023_08_20.mp4', t: 'video' },
-            { f: '2023_08_30.mp4', t: 'video' },
-            { f: '2023_09_10.png', t: 'img' },
-            { f: '2023_09_12.png', t: 'img' },
-            { f: '2023_09_26.mp4', t: 'video' },
-            { f: '2023_09_27.mp4', t: 'video' },
-            { f: '2023_10_06.png', t: 'img' },
-            { f: '2023_10_13.mp4', t: 'video' },
-            { f: '2023_10_25.png', t: 'img' },
-            { f: '2023_11_07.mp4', t: 'video' },
-            { f: '2023_11_09.mp4', t: 'video' },
-            { f: '2023_11_18.mp4', t: 'video' },
-            { f: '2023_11_21.mp4', t: 'video' },
-            { f: '2023_11_27.mp4', t: 'video' },
-            { f: '2023_12_02.mp4', t: 'video' },
-            { f: '2024_02_22.png', t: 'img' },
-            { f: '2024_02_22_2.mp4', t: 'video' },
-            { f: '2024_02_29.png', t: 'img' },
-            { f: '2024_03_27.mp4', t: 'video' },
-            { f: '2024_03_29.mp4', t: 'video' },
-            { f: '2024_04_02.mp4', t: 'video' },
-            { f: '2024_04_04.png', t: 'img' },
-            { f: '2024_04_05.png', t: 'img' },
-            { f: '2024_04_10.png', t: 'img' },
-            { f: '2024_04_11.jpg', t: 'img' },
-            { f: '2024_04_21.png', t: 'img' },
-            { f: '2024_04_22.png', t: 'img' },
-            { f: '2024_05_07.mp4', t: 'video' },
             { f: '2024_05_14.mp4', t: 'video' },
+            { f: '2024_05_07.mp4', t: 'video' },
+            { f: '2024_04_22.png', t: 'img' },
+            { f: '2024_04_21.png', t: 'img' },
+            { f: '2024_04_11.jpg', t: 'img' },
+            { f: '2024_04_10.png', t: 'img' },
+            { f: '2024_04_05.png', t: 'img' },
+            { f: '2024_04_04.png', t: 'img' },
+            { f: '2024_04_02.mp4', t: 'video' },
+            { f: '2024_03_29.mp4', t: 'video' },
+            { f: '2024_03_27.mp4', t: 'video' },
+            { f: '2024_02_29.mp4', t: 'video' },
+            { f: '2024_02_22.mp4', t: 'video' },
+            { f: '2024_02_21.png', t: 'img' },
+            { f: '2023_12_02.mp4', t: 'video' },
+            { f: '2023_11_27.mp4', t: 'video' },
+            { f: '2023_11_21.mp4', t: 'video' },
+            { f: '2023_11_18.mp4', t: 'video' },
+            { f: '2023_11_09.mp4', t: 'video' },
+            { f: '2023_11_07.mp4', t: 'video' },
+            { f: '2023_10_25.png', t: 'img' },
+            { f: '2023_10_13.mp4', t: 'video' },
+            { f: '2023_10_06.png', t: 'img' },
+            { f: '2023_09_27.mp4', t: 'video' },
+            { f: '2023_09_26.mp4', t: 'video' },
+            { f: '2023_09_12.png', t: 'img' },
+            { f: '2023_09_10.png', t: 'img' },
+            { f: '2023_08_30.mp4', t: 'video' },
+            { f: '2023_08_20.mp4', t: 'video' },
+            { f: '2023_08_19.png', t: 'img' },
+            { f: '2023_08_16.png', t: 'img' },
+            { f: '2023_08_16.mp4', t: 'video' },
+            { f: '2023_08_15.mp4', t: 'video' },
+            { f: '2023_07_17.png', t: 'img' },
+            { f: '2023_06_25.mp4', t: 'video' },
+            { f: '2023_06_20.png', t: 'img' }
         ];
-
-        const DEVLOG_REVERSED = [...DEVLOG].reverse();
 
         const DEVLOG_BATCH = 12;
         let devlogShown = DEVLOG_BATCH;
@@ -909,8 +907,8 @@
             const grid = document.getElementById('devlogGrid');
             const btn = document.getElementById('devlogMore');
             grid.innerHTML = '';
-            const count = Math.min(devlogShown, DEVLOG_REVERSED.length);
-            for (let i = 0; i < count; i++) grid.appendChild(buildDevlogItem(DEVLOG_REVERSED[i], i));
+            const count = Math.min(devlogShown, DEVLOG.length);
+            for (let i = 0; i < count; i++) grid.appendChild(buildDevlogItem(DEVLOG[i], i));
             const remaining = DEVLOG.length - devlogShown;
             btn.style.display = remaining <= 0 ? 'none' : 'block';
             btn.textContent = 'Показать ещё (' + remaining + ')';
@@ -934,7 +932,7 @@
         }
 
         function devlogUpdateLb() {
-            const item = DEVLOG_REVERSED[lbIndex];
+            const item = DEVLOG[lbIndex];
             const media = document.getElementById('lbMedia');
             media.innerHTML = '';
             if (item.t === 'img') {
@@ -946,7 +944,6 @@
                 vid.src = 'assets/devlog/' + item.f;
                 vid.controls = true;
                 vid.autoplay = true;
-                vid.muted = true;
                 media.appendChild(vid);
             }
         }
