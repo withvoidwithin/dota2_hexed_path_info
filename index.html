@@ -858,6 +858,8 @@
             { f: '2024_05_14.mp4', t: 'video' },
         ];
 
+        const DEVLOG_REVERSED = [...DEVLOG].reverse();
+
         const DEVLOG_BATCH = 12;
         let devlogShown = DEVLOG_BATCH;
 
@@ -907,9 +909,8 @@
             const grid = document.getElementById('devlogGrid');
             const btn = document.getElementById('devlogMore');
             grid.innerHTML = '';
-            const reversed = [...DEVLOG].reverse();
-            const count = Math.min(devlogShown, reversed.length);
-            for (let i = 0; i < count; i++) grid.appendChild(buildDevlogItem(reversed[i], i));
+            const count = Math.min(devlogShown, DEVLOG_REVERSED.length);
+            for (let i = 0; i < count; i++) grid.appendChild(buildDevlogItem(DEVLOG_REVERSED[i], i));
             const remaining = DEVLOG.length - devlogShown;
             btn.style.display = remaining <= 0 ? 'none' : 'block';
             btn.textContent = 'Показать ещё (' + remaining + ')';
@@ -933,7 +934,7 @@
         }
 
         function devlogUpdateLb() {
-            const item = DEVLOG[lbIndex];
+            const item = DEVLOG_REVERSED[lbIndex];
             const media = document.getElementById('lbMedia');
             media.innerHTML = '';
             if (item.t === 'img') {
