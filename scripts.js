@@ -1,3 +1,7 @@
+// Check language
+const isRu = document.documentElement.lang === 'ru';
+const assetPathPrefix = isRu ? '../' : '';
+
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const revealObs = new IntersectionObserver((entries) => {
@@ -31,14 +35,20 @@ let loopCurrent = 0;
 
 function loopTick() {
     for (let i = 0; i < LOOP_CARDS; i++) {
-        document.getElementById('loop-card-' + i).classList.remove('active');
+        const card = document.getElementById('loop-card-' + i);
+        if (card) card.classList.remove('active');
     }
     for (let i = 0; i < LOOP_CARDS - 1; i++) {
-        document.getElementById('loop-arr-' + i).classList.remove('active');
+        const arr = document.getElementById('loop-arr-' + i);
+        if (arr) arr.classList.remove('active');
     }
-    document.getElementById('loop-card-' + loopCurrent).classList.add('active');
+    
+    const activeCard = document.getElementById('loop-card-' + loopCurrent);
+    if (activeCard) activeCard.classList.add('active');
+    
     if (loopCurrent < LOOP_CARDS - 1) {
-        document.getElementById('loop-arr-' + loopCurrent).classList.add('active');
+        const activeArr = document.getElementById('loop-arr-' + loopCurrent);
+        if (activeArr) activeArr.classList.add('active');
     }
     loopCurrent = (loopCurrent + 1) % LOOP_CARDS;
 }
@@ -90,7 +100,9 @@ let devlogShown = DEVLOG_BATCH;
 
 function devlogDateLabel(f) {
     const p = f.split('_');
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const monthsEn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const monthsRu = ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'];
+    const months = isRu ? monthsRu : monthsEn;
     return months[parseInt(p[1]) - 1] + ' ' + p[0];
 }
 
@@ -100,13 +112,13 @@ function buildDevlogItem(item, index) {
 
     if (item.t === 'img') {
         const img = document.createElement('img');
-        img.src = 'assets/devlog/' + item.f;
+        img.src = assetPathPrefix + 'assets/devlog/' + item.f;
         img.loading = 'lazy';
         img.alt = '';
         el.appendChild(img);
     } else {
         const vid = document.createElement('video');
-        vid.src = 'assets/devlog/' + item.f;
+        vid.src = assetPathPrefix + 'assets/devlog/' + item.f;
         vid.preload = 'metadata';
         vid.muted = true;
         el.appendChild(vid);
@@ -133,12 +145,16 @@ function buildDevlogItem(item, index) {
 function renderDevlog() {
     const grid = document.getElementById('devlogGrid');
     const btn = document.getElementById('devlogMore');
+    if (!grid || !btn) return;
     grid.innerHTML = '';
     const count = Math.min(devlogShown, DEVLOG.length);
     for (let i = 0; i < count; i++) grid.appendChild(buildDevlogItem(DEVLOG[i], i));
     const remaining = DEVLOG.length - devlogShown;
     btn.style.display = remaining <= 0 ? 'none' : 'block';
-    btn.textContent = 'Показать ещё (' + remaining + ')';
+    
+    btn.textContent = isRu 
+        ? 'Показать ещё (' + remaining + ')' 
+        : 'Show More (' + remaining + ')';
 }
 
 let lbIndex = 0;
@@ -161,14 +177,15 @@ function devlogOpenLb(index) {
 function devlogUpdateLb() {
     const item = DEVLOG[lbIndex];
     const media = document.getElementById('lbMedia');
+    if (!media) return;
     media.innerHTML = '';
     if (item.t === 'img') {
         const img = document.createElement('img');
-        img.src = 'assets/devlog/' + item.f;
+        img.src = assetPathPrefix + 'assets/devlog/' + item.f;
         media.appendChild(img);
     } else {
         const vid = document.createElement('video');
-        vid.src = 'assets/devlog/' + item.f;
+        vid.src = assetPathPrefix + 'assets/devlog/' + item.f;
         vid.controls = true;
         vid.autoplay = true;
         media.appendChild(vid);
@@ -181,7 +198,8 @@ function devlogUpdateLb() {
 
 function devlogCloseLb() {
     lb.classList.remove('open');
-    document.getElementById('lbMedia').innerHTML = '';
+    const media = document.getElementById('lbMedia');
+    if (media) media.innerHTML = '';
 }
 
 document.getElementById('lbClose').addEventListener('click', devlogCloseLb);
@@ -195,6 +213,9 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % DEVLOG.length; devlogUpdateLb(); }
 });
 
-document.getElementById('devlogMore').addEventListener('click', () => { devlogShown += DEVLOG_BATCH; renderDevlog(); });
+const moreBtn = document.getElementById('devlogMore');
+if (moreBtn) {
+    moreBtn.addEventListener('click', () => { devlogShown += DEVLOG_BATCH; renderDevlog(); });
+}
 
 renderDevlog();
