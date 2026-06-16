@@ -181,6 +181,38 @@ a {
     }
 }
 
+/* === TEASER SECTION === */
+.teaser-section {
+    padding-top: clamp(2rem, 4vw, 4rem);
+    padding-bottom: clamp(2rem, 4vw, 4rem);
+    background: transparent;
+}
+
+.teaser-wrapper {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 40px rgba(115, 55, 255, 0.03);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        border-color: rgba(115, 55, 255, 0.25);
+        box-shadow: 0 0 50px rgba(115, 55, 255, 0.1);
+    }
+
+    & iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
 /* === BUTTONS === */
 .btn-primary {
     display: inline-flex;
