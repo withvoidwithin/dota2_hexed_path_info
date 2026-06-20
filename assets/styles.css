@@ -136,6 +136,42 @@ a {
     }
 }
 
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: var(--accent-lit);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-divider {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: bold;
+    user-select: none;
+    opacity: 0.5;
+}
+
 /* === HERO === */
 .hero {
     min-height: 100dvh;
