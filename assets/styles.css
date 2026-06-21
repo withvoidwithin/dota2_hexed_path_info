@@ -885,8 +885,8 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
+    /* background: var(--border); */
+    /* border: 1px solid var(--border); */
 
     @media (max-width: 860px) {
         grid-template-columns: 1fr;
@@ -904,6 +904,7 @@ a {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    margin: 2px;
 
     /* Мягкое затемнение фона, чтобы выделить кнопку */
     &::before {
