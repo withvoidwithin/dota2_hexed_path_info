@@ -9,6 +9,7 @@
     --accent: #7337ff;
     --accent-lit: #968fff;
     --accent-dim: rgba(77, 10, 184, 0.12);
+    --danger: #e5484d;
 }
 
 /* === RESET === */
@@ -225,6 +226,39 @@ a {
         letter-spacing: 0.05em;
         opacity: 0;
         animation: fadeUp 0.7s 0.95s forwards;
+    }
+
+    & .hero-notice {
+        max-width: 640px;
+        margin-top: 2.75rem;
+        padding: 1.5rem 1.75rem;
+        background: rgba(14, 14, 22, 0.6);
+        border: 1px solid var(--border);
+        opacity: 0;
+        animation: fadeUp 0.7s 1.3s forwards;
+
+        & .hero-notice-title {
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--danger);
+            margin-bottom: 0.85rem;
+        }
+
+        & p {
+            font-size: 0.9375rem;
+            line-height: 1.75;
+            color: var(--text);
+        }
+
+        & p + p {
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 860px) {
+            margin-top: 2rem;
+            padding: 1.25rem;
+        }
     }
 
     & .hero-scroll {
@@ -586,7 +620,7 @@ a {
 
 .roadmap-row {
     display: grid;
-    grid-template-columns: 140px 40px 1fr;
+    grid-template-columns: 40px 1fr;
     align-items: stretch;
     background: rgba(14, 14, 22, 0.45);
     border-top: 1px solid rgba(28, 28, 40, 0.7);
@@ -598,11 +632,6 @@ a {
         background: rgba(115, 55, 255, 0.03);
         border-top: 1px solid rgba(150, 143, 255, 0.25);
         border-bottom: 1px solid rgba(150, 143, 255, 0.25);
-
-        & .roadmap-time {
-            color: var(--accent-lit);
-            text-shadow: 0 0 15px rgba(150, 143, 255, 0.25);
-        }
 
         & .roadmap-bracket-line {
             background: var(--accent-lit);
@@ -624,22 +653,6 @@ a {
         &:last-child {
             border-bottom: 1px solid rgba(28, 28, 40, 0.7);
         }
-    }
-}
-
-.roadmap-time {
-    font-family: 'Philosopher', serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    transition: color 0.3s ease;
-    align-self: center;
-
-    @media (max-width: 860px) {
-        font-size: 1.05rem;
-        padding-top: 0;
-        margin-bottom: 0.25rem;
     }
 }
 
