@@ -255,6 +255,14 @@ a {
             margin-top: 0.75rem;
         }
 
+        & .hero-notice-date {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.8125rem;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+        }
+
         @media (max-width: 860px) {
             margin-top: 2rem;
             padding: 1.25rem;
@@ -620,7 +628,7 @@ a {
 
 .roadmap-row {
     display: grid;
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 140px 40px 1fr;
     align-items: stretch;
     background: rgba(14, 14, 22, 0.45);
     border-top: 1px solid rgba(28, 28, 40, 0.7);
@@ -632,6 +640,11 @@ a {
         background: rgba(115, 55, 255, 0.03);
         border-top: 1px solid rgba(150, 143, 255, 0.25);
         border-bottom: 1px solid rgba(150, 143, 255, 0.25);
+
+        & .roadmap-time {
+            color: var(--accent-lit);
+            text-shadow: 0 0 15px rgba(150, 143, 255, 0.25);
+        }
 
         & .roadmap-bracket-line {
             background: var(--accent-lit);
@@ -652,6 +665,30 @@ a {
 
         &:last-child {
             border-bottom: 1px solid rgba(28, 28, 40, 0.7);
+        }
+    }
+}
+
+.roadmap-time {
+    font-family: 'Philosopher', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    align-self: center;
+
+    &.is-unknown {
+        text-align: center;
+    }
+
+    @media (max-width: 860px) {
+        font-size: 1.05rem;
+        padding-top: 0;
+        margin-bottom: 0.25rem;
+
+        &.is-unknown {
+            text-align: left;
         }
     }
 }
